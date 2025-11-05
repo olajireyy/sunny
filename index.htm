@@ -1,529 +1,541 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Sunnyside Agency</title>
   <style>
-    /* CSS RESET STARTS */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-
     }
 
-    /* CSS RESET ENDS */
     body {
-      height: fit-content;
-      width: fit-content;
+      font-family: 'Barlow', sans-serif;
+      line-height: 1.6;
+      color: #333;
     }
-header {
-height: 500px;
-background: url("images/desktop/image-header.jpg") center/cover;
-}
-    .header {
-      /* background-color: brown; */
+
+    /* Header Section */
+    header {
+      height: 100vh;
+      min-height: 600px;
+      background: url("images/desktop/image-header.jpg") center/cover no-repeat;
+      position: relative;
+    }
+
+    .navbar {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      align-items: start;
-      justify-content: space-around;
       justify-content: space-between;
-      /* justify-content: space-evenly; */
-    }
-
-    .sunny {
-      color: white;
-      /* height: 50px; */
-      /* width: 50px; */
-      /* background-color: rgb(158, 243, 162); */
-      margin: 9px;
-      margin-left: 10px;
-      font-size: 30px;
-      font-family: cursive;
-    }
-
-    .parent-2 {
-      display: flex;
-      /* align-items: center; */
-      margin-right: 5px;
-      font-size: 20px;
-    }
-
-    .child {
-      /* height: 50px; */
-      /* width: 50px; */
-      /* background-color: rgb(229, 231, 66); */
-      color: white;
-      margin: 10px;
-    }
-
-    .hero {
-      height: 50%;
-      width: 50%;
-      background-color: burlywood;
-      justify-content: center;
       align-items: center;
+      padding: 2rem 3rem;
+    }
+
+    .logo {
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      font-family: 'Fraunces', serif;
+    }
+
+    .nav-links {
       display: flex;
+      gap: 2.5rem;
+      align-items: center;
     }
 
-    .content {
-      height: 400px;
-      /* background-color: rgb(255, 255, 255); */
-      /* justify-content: center; */
-      /* justify-content: end; */
-      /* justify-content: baseline; */
-
-      /* align-items: center; */
-      display: flex;
-      flex-direction: row-reverse;
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 1.1rem;
     }
 
-    .herob {
-      /* height: 40px; */
-      /* width: 50px; */
-      background-color: rgb(243, 243, 243);
-      margin: 5px;
+    .nav-links a:hover {
+      opacity: 0.8;
     }
 
-    .y {
-      height: 100%;
-      width: 50%;
-      /* background-color: yellow; */
-      background: url("images/desktop/image-transform.jpg") no-repeat center center/cover;
-      display: flex;
-      /* width: 400px; */
+    .contact-btn {
+      background: white;
+      color: #333 !important;
+      padding: 0.8rem 1.8rem;
+      border-radius: 50px;
+      text-transform: uppercase;
+      font-family: 'Fraunces', serif;
+      font-size: 0.9rem !important;
+      font-weight: bold;
+      transition: all 0.3s ease;
     }
 
-    .p {
-      height: 100%;
-      /* width: 400px; */
-      width: 50%;
-      /* background-color: rgb(255, 255, 255); */
+    .contact-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+      color: white !important;
+    }
+
+    .hero-title {
       text-align: center;
-      /* margin-top: 90px; */
-
+      color: white;
+      font-size: 3.5rem;
+      font-weight: 900;
+      letter-spacing: 0.5rem;
+      text-transform: uppercase;
+      margin-top: 5rem;
+      font-family: 'Fraunces', serif;
     }
 
-    #reverse {
-      flex-direction: row;
+    .arrow-down {
+      text-align: center;
+      margin-top: 5rem;
+      font-size: 3rem;
     }
 
-
-
-    #cup {
-      background: url("images/desktop/image-stand-out.jpg") no-repeat center center/cover;
+    /* Mobile Menu */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.8rem;
+      cursor: pointer;
     }
 
-    #button {
-      background-color: white;
-      color: black;
-      font-size: 13px;
-      padding: 4px;
-      margin: 10px;
+    /* Content Sections */
+    .split-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .split-section.reverse {
+      direction: rtl;
+    }
+
+    .split-section.reverse > * {
+      direction: ltr;
+    }
+
+    .image-side {
+      min-height: 500px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .text-side {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem;
+    }
+
+    .text-content {
+      max-width: 450px;
+    }
+
+    .text-content h2 {
+      font-size: 2.5rem;
+      font-family: 'Fraunces', serif;
+      font-weight: 900;
+      margin-bottom: 2rem;
+      line-height: 1.2;
+      color: #23303e;
+    }
+
+    .text-content p {
+      color: #818498;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .learn-more {
+      text-transform: uppercase;
+      font-family: 'Fraunces', serif;
+      font-weight: 900;
+      color: #23303e;
+      text-decoration: none;
+      position: relative;
+      display: inline-block;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+    }
+
+    .learn-more::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: -8px;
+      right: -8px;
+      height: 10px;
+      background: #fad400;
+      opacity: 0.3;
       border-radius: 10px;
+      z-index: -1;
+      transition: opacity 0.3s ease;
     }
 
-
-
-    #tangerine {
-      background: url("images/desktop/image-photography.jpg")no-repeat center center/cover;
+    .learn-more:hover::after {
+      opacity: 1;
     }
 
-    #cherry {
-      background: url("images/desktop/image-graphic-design.jpg") center/cover;
-
+    .learn-more.pink::after {
+      background: #fe7867;
     }
 
-    #text-a {
-      /* background-color: rgb(243, 243, 243); */
-      padding: 20%;
+    /* Services Section */
+    .services-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
     }
 
-    #h1 {
-      position: absolute;
-      top: 20%;
-      left: 25%;
-      font-size: 35px;
-      color: beige;
-      font-family: sans-serif;
-
-    }
-
-    #arrow {
+    .service-card {
+      min-height: 600px;
+      background-size: cover;
+      background-position: center;
       display: flex;
-
+      align-items: flex-end;
       justify-content: center;
-      /* background-color: rgb(137, 229, 229); */
-
-
+      padding: 4rem 2rem;
+      position: relative;
     }
 
-    #h2 {
-      position: absolute;
-      top: -18%;
-      font-size: 22px;
+    .service-content {
       text-align: center;
-      opacity: 50%;
-      font-family: 'Courier New', Courier, monospace;
-
+      max-width: 350px;
     }
 
-    .comment {
-      height: 600px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
+    .service-content h3 {
+      font-size: 1.8rem;
+      font-family: 'Fraunces', serif;
+      font-weight: 900;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-content p {
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .graphic-design {
+      color: #25564b;
+    }
+
+    .photography {
+      color: #19536b;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      padding: 8rem 2rem;
       text-align: center;
-
     }
 
-    #csi {
+    .testimonials h2 {
+      text-transform: uppercase;
+      letter-spacing: 0.3rem;
+      color: #a7abae;
+      font-size: 1.2rem;
+      font-weight: 900;
+      margin-bottom: 5rem;
+      font-family: 'Fraunces', serif;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .testimonial-card img {
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
-      position: relative;
-      top: 20%;
-      height: 50px;
+      margin-bottom: 3rem;
     }
 
-    #emily {
-      position: relative;
-      top: 40%;
-      /* left: 10%; */
-      font-size: 14px;
-      font-family: sans-serif;
+    .testimonial-card p {
+      color: #5a636c;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 3rem;
     }
 
-    #one1 {
-      position: relative;
-      top: 13%;
-      font-weight: 800;
-      font-family: cursive;
-    }
-
-    #buyer {
-      opacity: 50%;
-    }
-
-    #cs {
-      position: relative;
-      top: 10%;
-    }
-
-    .xtra {
-      height: 300px;
-      background: blue;
-      display: flex;
-      flex-direction: row;
-    }
-
-    #bottles {
-      background: url("images/desktop/image-gallery-milkbottles.jpg") no-repeat center center/cover;
-      height: 100%;
-      width: 25%;
-    }
-
-    #orange {
-      background: url("images/desktop/image-gallery-orange.jpg") no-repeat center center/cover;
-      height: 100%;
-      width: 25%;
-    }
-
-    #icecream {
-      background: url("images/desktop/image-gallery-cone.jpg") no-repeat center center/cover;
-      height: 100%;
-      width: 25%;
-
-    }
-
-    #sugar {
-      background: url("images/desktop/image-gallery-sugarcubes.jpg") no-repeat center center/cover;
-      height: 100%;
-      width: 25%;
-    }
-
-    .footer {
-      background: hsl(168, 65%, 73%);
-      height: 250px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-around;
-      color: hsl(168, 44%, 36%);
-
-      font-family: sans-serif;
-    }
-
-    #ss {
-      font-size: 20px;
-      font-weight: 800;
-    }
-
-    #nav2 {
-      display: flex;
-      font-size: 11px;
-      position: relative;
-      bottom: 15%;
-
-
-
-    }
-
-    #ab {
-      position: relative;
-      right: 30%;
-    }
-
-    #pr {
-      position: relative;
-      left: 40%;
-    }
-
-    #se {
-      position: relative;
-      left: 6%;
-    }
-
-    #icons {
-      display: flex;
-      position: relative;
-      bottom: 15%;
-
-    }
-
-    #fb {
-      position: relative;
-      right: 25%;
-
-    }
-
-    #ig {
-      position: relative;
-      right: 7%;
-    }
-
-    #tw {
-      position: relative;
-      left: 7%;
-    }
-
-    #pin {
-      position: relative;
-      left: 25%;
-    }
-
-    #gd {
-      position: relative;
-      top: 65%;
+    .testimonial-card h4 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.2rem;
       font-weight: 900;
-      color: hsl(167, 47%, 21%);
-      font-size: 200%;
+      color: #23303e;
+      margin-bottom: 0.5rem;
     }
 
-    #gdt {
-      position: relative;
-      top: 70%;
-      font-size: 80%;
-      color: hsl(167, 91%, 26%);
-      font-family: sans-serif;
+    .testimonial-card .role {
+      color: #a7abae;
+      font-size: 0.9rem;
     }
 
-    #ph {
-      position: relative;
-      top: 65%;
-
-      font-weight: 900;
-      color: hsl(210, 48%, 20%);
-      font-size: 200%;
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
     }
 
-    #pt {
-      position: relative;
-      top: 70%;
+    .gallery-item {
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Footer */
+    footer {
+      background: #90d4c5;
+      padding: 4rem 2rem;
       text-align: center;
-      font-size: 80%;
-      font-family: sans-serif;
-
     }
-    #hhp {
-      text-align: center;
+
+    .footer-logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #2c7566;
+      margin-bottom: 2rem;
+      font-family: 'Fraunces', serif;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    .footer-links a {
+      color: #458c7e;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
       color: white;
-position: absolute;
-font-size: 50px;
-top: 10%;
-left: 15%;
-width: 70%;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .social-icons svg {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .social-icons svg:hover path {
+      fill: white;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+        letter-spacing: 0.3rem;
+        padding: 0 1rem;
+      }
+
+      .split-section,
+      .split-section.reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+      }
+
+      .split-section .image-side:first-child {
+        order: 1;
+      }
+
+      .split-section .text-side {
+        order: 2;
+      }
+
+      .split-section.reverse .image-side {
+        order: 1;
+      }
+
+      .split-section.reverse .text-side {
+        order: 2;
+      }
+
+      .text-side {
+        padding: 3rem 2rem;
+        text-align: center;
+      }
+
+      .text-content h2 {
+        font-size: 2rem;
+      }
+
+      .services-section {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        min-height: 500px;
+      }
+
+      .testimonials {
+        padding: 4rem 1.5rem;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-item {
+        height: 250px;
+      }
+
+      .footer-links {
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar {
+        padding: 1.5rem 1.5rem;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+        margin-top: 3rem;
+      }
+
+      .arrow-down {
+        margin-top: 3rem;
+      }
+
+      .text-content h2 {
+        font-size: 1.8rem;
+      }
+
+      .text-content p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
-
 <body>
-
   <header>
-    <div class="header">
-      <div class="sunny" id="header">
-        <p><b>Sunnyside</b></p>
+    <nav class="navbar">
+      <div class="logo">sunnyside</div>
+      <button class="mobile-menu-btn">☰</button>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact" class="contact-btn">Contact</a>
       </div>
-      <div class="parent-2" id="nav-list">
-        <div class="child">About</div>
-        <div class="child">Services</div>
-        <div class="child"> Products</div>
-        <div class="child" id="button">CONTACT</div>
+    </nav>
+    <h1 class="hero-title">We Are Creatives</h1>
+    <div class="arrow-down">↓</div>
+  </header>
+
+  <section class="split-section">
+    <div class="text-side">
+      <div class="text-content">
+        <h2>Transform your brand</h2>
+        <p>We are a full-service creative agency specializing in helping brands grow fast. Engage your clients through compelling visuals that do most of the marketing for you.</p>
+        <a href="#" class="learn-more">Learn More</a>
       </div>
     </div>
-    <p id="hhp">WE ARE CREATIVES</p>
-</header>
+    <div class="image-side" style="background-image: url('images/desktop/image-transform.jpg');"></div>
+  </section>
 
-
-
-  
-  <section class="content">
-    <div class="y" id="egg">
-
-    </div>
-    <div class="p">
-
-      <div id="text-a">
-        <h3>Transform your <br> brand</h3>
-        <p> We are a full-service creative agency specializing in helping brands grow fasr. Engage your
-          clients through compelling visuals that do most of the marketing for you<br><br>
-          <b>LEARN MORE</b>
-        </p>
+  <section class="split-section reverse">
+    <div class="text-side">
+      <div class="text-content">
+        <h2>Stand out to the right audience</h2>
+        <p>Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we'll build and extend your brand in digital places.</p>
+        <a href="#" class="learn-more pink">Learn More</a>
       </div>
+    </div>
+    <div class="image-side" style="background-image: url('images/desktop/image-stand-out.jpg');"></div>
+  </section>
 
+  <section class="services-section">
+    <div class="service-card" style="background-image: url('images/desktop/image-graphic-design.jpg');">
+      <div class="service-content graphic-design">
+        <h3>Graphic Design</h3>
+        <p>Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential clients' attention.</p>
+      </div>
+    </div>
+    <div class="service-card" style="background-image: url('images/desktop/image-photography.jpg');">
+      <div class="service-content photography">
+        <h3>Photography</h3>
+        <p>Increase your credibility by getting the most stunning, high-quality photos that improve your business image.</p>
+      </div>
     </div>
   </section>
 
-  <section class="content" id="reverse">
-    <div class="y" id="cup">
-
-    </div>
-    <div class="p">
-      <div id="text-a">
-        <h3>Stand Out to the right audience</h3>
-        <p>
-          Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we'll
-          build and extend your brand in digital places <br><br>LEARN MORE
-        </p>
+  <section class="testimonials">
+    <h2>Client Testimonials</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <img src="images/image-emily.jpg" alt="Emily R.">
+        <p>We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.</p>
+        <h4>Emily R.</h4>
+        <div class="role">Marketing Director</div>
+      </div>
+      <div class="testimonial-card">
+        <img src="images/image-thomas.jpg" alt="Thomas S.">
+        <p>Sunnyside's enthusiasm coupled with their keen interest in our brand's success made it a satisfying and enjoyable experience.</p>
+        <h4>Thomas S.</h4>
+        <div class="role">Chief Operating Officer</div>
+      </div>
+      <div class="testimonial-card">
+        <img src="images/image-jennie.jpg" alt="Jennie F.">
+        <p>Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!</p>
+        <h4>Jennie F.</h4>
+        <div class="role">Business Owner</div>
       </div>
     </div>
   </section>
 
-  <section class="content">
-    <div class="p" id="tangerine">
-      <h3 id="ph">Photography</h3>
-      <p id="pt">Increase your credibility by getting the most <br> stunning, high-quality photos that improve your <br>
-        business image.</p>
-    </div>
-    <div class="p" id="cherry">
-      <h3 id="gd">Graphic Design</h3>
-      <p id="gdt">Great design makes you memorabler. We deliver <br> artwork that underscores tour brand message <br>
-        and captures potential clients' attention.</p>
-    </div>
+  <section class="gallery">
+    <div class="gallery-item" style="background-image: url('images/desktop/image-gallery-milkbottles.jpg');"></div>
+    <div class="gallery-item" style="background-image: url('images/desktop/image-gallery-orange.jpg');"></div>
+    <div class="gallery-item" style="background-image: url('images/desktop/image-gallery-cone.jpg');"></div>
+    <div class="gallery-item" style="background-image: url('images/desktop/image-gallery-sugarcubes.jpg');"></div>
   </section>
 
-  <section class="comment">
-
-    <div id="emily">
-      <div class="csone">
-        <div class="one"><img src="images/image-emily.jpg" alt="" id="csi"></div>
-
-      </div>
-      <p id="cs">We put our trust in Sunnyside and they <br>delivered, making sure our needs were met <br>and deadlines
-        were always a hit
-      <p>
-      <div id="one1">
-        <p id="name"><b>Emily R.</b></p>
-        <p id="buyer">Marketing Director</p>
-      </div>
-
+  <footer>
+    <div class="footer-logo">sunnyside</div>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
     </div>
-
+    <div class="social-icons">
+      <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M18.896 0H1.104C.494 0 0 .494 0 1.104v17.793C0 19.506.494 20 1.104 20h9.58v-7.745H8.076V9.237h2.606V7.01c0-2.583 1.578-3.99 3.883-3.99 1.104 0 2.052.082 2.329.119v2.7h-1.598c-1.254 0-1.496.597-1.496 1.47v1.928h2.989l-.39 3.018h-2.6V20h5.098c.608 0 1.102-.494 1.102-1.104V1.104C20 .494 19.506 0 18.896 0z" fill="#2C7566" fill-rule="nonzero"/></svg>
+      <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1.802c2.67 0 2.987.01 4.042.059 2.71.123 3.975 1.409 4.099 4.099.048 1.054.057 1.37.057 4.04 0 2.672-.01 2.988-.057 4.042-.124 2.687-1.387 3.975-4.1 4.099-1.054.048-1.37.058-4.041.058-2.67 0-2.987-.01-4.04-.058-2.718-.124-3.977-1.416-4.1-4.1-.048-1.054-.058-1.37-.058-4.041 0-2.67.01-2.986.058-4.04.124-2.69 1.387-3.977 4.1-4.1 1.054-.048 1.37-.058 4.04-.058zM10 0C7.284 0 6.944.012 5.877.06 2.246.227.227 2.242.061 5.877.01 6.944 0 7.284 0 10s.012 3.057.06 4.123c.167 3.632 2.182 5.65 5.817 5.817 1.067.048 1.407.06 4.123.06s3.057-.012 4.123-.06c3.629-.167 5.652-2.182 5.816-5.817.05-1.066.061-1.407.061-4.123s-.012-3.056-.06-4.122C19.777 2.249 17.76.228 14.124.06 13.057.01 12.716 0 10 0zm0 4.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zm0 8.468a3.333 3.333 0 110-6.666 3.333 3.333 0 010 6.666zm5.338-9.87a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4z" fill="#2C7566" fill-rule="nonzero"/></svg>
+      <svg width="20" height="17" xmlns="http://www.w3.org/2000/svg"><path d="M20 2.172a8.192 8.192 0 01-2.357.646 4.11 4.11 0 001.805-2.27 8.22 8.22 0 01-2.606.996A4.096 4.096 0 0013.847.248c-2.65 0-4.596 2.472-3.998 5.037A11.648 11.648 0 011.392 1a4.109 4.109 0 001.27 5.478 4.086 4.086 0 01-1.858-.513c-.045 1.9 1.318 3.679 3.291 4.075a4.113 4.113 0 01-1.853.07 4.106 4.106 0 003.833 2.849A8.25 8.25 0 010 14.658a11.616 11.616 0 006.29 1.843c7.618 0 11.923-6.434 11.663-12.205A8.354 8.354 0 0020 2.172z" fill="#2C7566" fill-rule="nonzero"/></svg>
+      <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M10 0C4.477 0 0 4.477 0 10c0 4.237 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.6-.299-1.486c0-1.39.806-2.428 1.81-2.428.852 0 1.264.64 1.264 1.408 0 .858-.546 2.14-.828 3.33-.236.995.5 1.807 1.48 1.807 1.778 0 3.144-1.874 3.144-4.58 0-2.393-1.72-4.068-4.176-4.068-2.845 0-4.516 2.135-4.516 4.34 0 .859.331 1.781.745 2.281a.3.3 0 01.069.288l-.278 1.133c-.044.183-.145.223-.335.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.965-.525-2.291-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S15.523 0 10 0z" fill="#2C7566" fill-rule="nonzero"/></svg>
     </div>
-    <div id="emily">
-      <div class="csone">
-        <h3 id="h2">CLIENT TESTIMONIALS</h3>
-        <div class="one"><img src="images/image-thomas.jpg" alt="" id="csi">
-        </div>
-
-      </div>
-      <p id="cs">Sunnyside's enthusiasm coupled with their <br> keen interest in our brand's success made it <br>a
-        satisfying and enjoyable experience.
-      <p>
-      <div id="one1">
-        <p id="name"><b>Thomas S.</b></p>
-        <p id="buyer">Chief Operating Officer</p>
-      </div>
-
-    </div>
-    </div>
-    <div id="emily">
-      <div class="csone">
-        <div class="one"><img src="images/image-jennie.jpg" alt="" id="csi"></div>
-
-      </div>
-      <p id="cs">Incredible end result! Our sales increased <br> over 400% when we worked with Sunnyside. <br> Highly
-        Recommended!
-      <p>
-      <div id="one1">
-        <p id="name"><b>Jenny F.</b></p>
-        <p id="buyer">Business Owner</p>
-      </div>
-
-    </div>
-    </div>
-
-  </section>
-
-  <section class="xtra">
-    <div id="bottles"></div>
-    <div id="orange"></div>
-    <div id="icecream"></div>
-    <div id="sugar"></div>
-  </section>
-
-  <footer class="footer">
-    <div id="ss">sunnyside</div>
-    <div id="nav2">
-      <div id="ab">About</div>
-      <div id="se">Services</div>
-      <div id="pr">Projects</div>
-    </div>
-
-    <div id="icons">
-      <div id="fb">
-        <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M18.896 0H1.104C.494 0 0 .494 0 1.104v17.793C0 19.506.494 20 1.104 20h9.58v-7.745H8.076V9.237h2.606V7.01c0-2.583 1.578-3.99 3.883-3.99 1.104 0 2.052.082 2.329.119v2.7h-1.598c-1.254 0-1.496.597-1.496 1.47v1.928h2.989l-.39 3.018h-2.6V20h5.098c.608 0 1.102-.494 1.102-1.104V1.104C20 .494 19.506 0 18.896 0z"
-            fill="#2C7566" fill-rule="nonzero" />
-        </svg>
-      </div>
-      <div id="ig">
-        <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M10 1.802c2.67 0 2.987.01 4.042.059 2.71.123 3.975 1.409 4.099 4.099.048 1.054.057 1.37.057 4.04 0 2.672-.01 2.988-.057 4.042-.124 2.687-1.387 3.975-4.1 4.099-1.054.048-1.37.058-4.041.058-2.67 0-2.987-.01-4.04-.058-2.718-.124-3.977-1.416-4.1-4.1-.048-1.054-.058-1.37-.058-4.041 0-2.67.01-2.986.058-4.04.124-2.69 1.387-3.977 4.1-4.1 1.054-.048 1.37-.058 4.04-.058zM10 0C7.284 0 6.944.012 5.877.06 2.246.227.227 2.242.061 5.877.01 6.944 0 7.284 0 10s.012 3.057.06 4.123c.167 3.632 2.182 5.65 5.817 5.817 1.067.048 1.407.06 4.123.06s3.057-.012 4.123-.06c3.629-.167 5.652-2.182 5.816-5.817.05-1.066.061-1.407.061-4.123s-.012-3.056-.06-4.122C19.777 2.249 17.76.228 14.124.06 13.057.01 12.716 0 10 0zm0 4.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zm0 8.468a3.333 3.333 0 110-6.666 3.333 3.333 0 010 6.666zm5.338-9.87a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4z"
-            fill="#2C7566" fill-rule="nonzero" />
-        </svg>
-      </div>
-      <div id="tw">
-        <svg width="20" height="17" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M20 2.172a8.192 8.192 0 01-2.357.646 4.11 4.11 0 001.805-2.27 8.22 8.22 0 01-2.606.996A4.096 4.096 0 0013.847.248c-2.65 0-4.596 2.472-3.998 5.037A11.648 11.648 0 011.392 1a4.109 4.109 0 001.27 5.478 4.086 4.086 0 01-1.858-.513c-.045 1.9 1.318 3.679 3.291 4.075a4.113 4.113 0 01-1.853.07 4.106 4.106 0 003.833 2.849A8.25 8.25 0 010 14.658a11.616 11.616 0 006.29 1.843c7.618 0 11.923-6.434 11.663-12.205A8.354 8.354 0 0020 2.172z"
-            fill="#2C7566" fill-rule="nonzero" />
-        </svg>
-      </div>
-      <div id="pin"><svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M10 0C4.477 0 0 4.477 0 10c0 4.237 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.6-.299-1.486c0-1.39.806-2.428 1.81-2.428.852 0 1.264.64 1.264 1.408 0 .858-.546 2.14-.828 3.33-.236.995.5 1.807 1.48 1.807 1.778 0 3.144-1.874 3.144-4.58 0-2.393-1.72-4.068-4.176-4.068-2.845 0-4.516 2.135-4.516 4.34 0 .859.331 1.781.745 2.281a.3.3 0 01.069.288l-.278 1.133c-.044.183-.145.223-.335.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.965-.525-2.291-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S15.523 0 10 0z"
-            fill="#2C7566" fill-rule="nonzero" />
-        </svg></div>
   </footer>
-  </div>
-
-
 </body>
-
 </html>
